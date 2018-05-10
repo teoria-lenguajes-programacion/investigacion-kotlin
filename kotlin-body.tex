@@ -331,20 +331,65 @@ Para atrapar una excepción, se usa la expresión \texttt{try}:
 \end{verbatim}
 Pueden haber uno o varios bloques \texttt{catch}. Los bloques \texttt{finally} pueden ser omitidos. 
 
-
 \subsection{Mecanismos de abstracción}
+%% Esta sección podria ser reemplazada por otras en donde se habla sobre clases, subclases, herencia, tipos abstractos, encapsulacimiento
 
 \subsection{Mecanismos de modularización}
+Java organiza todas las clases en paquetes. Kotlin tambien tiene el concepto de paquetes. Cada archivo Kotlin puede tener una declaración de \texttt{package} al inicio y, todas las demás declaraciones (clases, funciones y propiedades) definidas en el archivo serán colocados bajo ese paquete. Las declaraciones definidas en otros archivos puede ser usados directamente si ellos están en el mismo paquete. Si se encuentran en diferentes paquetes necesitan ser importados. Tal y como en Java las declaraciones de importación se colocan al inicio del archivo por medio de la palabra reservada \texttt{import}. En la figura \ref{fig:import-1} se muestra un ejemplo de una declaración de \texttt{package} e \texttt{import} en un archivo.
+
+\begin{figure}[h!]
+  \includegraphics[width=12cm]{import-1}
+  \caption{Declaracion de una clase y una función en un paquete. Fuente \cite{kotlin-in-action}}
+  \label{fig:import-1}
+\end{figure}  
+
+Kotlin no hace distinción entre importar clases y funciones, y esto permita importar cualquier clase de declaración usando la declaración \texttt{import}.
+
+\begin{figure}[h!]
+  \includegraphics[width=12cm]{import-2}
+  \caption{Importando una función desde otro paquete. Fuente \cite{kotlin-in-action}}
+  \label{fig:import-2}
+\end{figure}
+
+También se puede importar todas las declaraciones de un paquete en particular poniendo \texttt{.*} luego del nombre del paquete. Este \emph{star import} hace visible no solamente las clases definidas del paquete sino también funciones y propiedades. Si en la figura \ref{fig:import-2} se escribiera \texttt{import geometry.shapes.*} en lugar de la importación explícita, el código continuaría siento correcto.
+
+En Kotlin, se pueden poner varias clases en el mismo archivo y se escoger cualquier nombre para ese archivo. Kotlin no impone ninguna restricción en cómo se disponen los archivos en el disco. Se puede usera cualquier estructura de directorios para organizar los archivos. Sin embargo, en la mayoría de los caso es una buena práctica seguir la estructura de directorios de Java para organizar los archivos. Esta estructura se hace particularmente importante en proyectos en donde se combina código Java y Kotlin porque ayuda a migrar el código gradualmente.
 
 \subsection{Soporte a concurrencia, paralelismo, distribución}
+Al ser 100\% interoperable con Java, en Kotlin se pueden utilizar todas las librerías (\emph{Futures}, \emph{CompletableFutures}, \emph{Reactive Extensions}) para concurrencia, paralelismo y programación asincrónica en general que son utilizadas en Java.
+
+\subsubsection{Corutinas (\emph{Coroutines})}
+A partir de la versión 1.1 de Kotlin se introdujo el concepto de Corutina que proporciona una forma de evitar bloquear un hilo(\emph{thread}) y reemplazarlo con una operación más económica y de mayor control: la \emph{suspensión} de una corutina.
+
+Básicamente, las corutinas son cómputos que pueden ser \emph{suspendidos} sin bloquear un hilo. El bloqueo de un hilo es usualmente una operación cara en términos de CPU y memoria, especialmente bajo grandes cargas de trabajo, porque solamente un número relativamente pequeño de hilos puede ser mantenido, por lo que bloquear uno de ellos lleva a que se retrase un trabajo importante.
+
+Por otro lado, la suspensión de una corutina es casi gratis. No hay cambios de contexto o cualquier otro tipo de involucramiento del sistema operativo es requerido. Aparte de esto, la suspensión puede ser contralada por el código del usuario y de esta forma decidir qué pasa con la misma y de esta forma optimizar, interceptar o capturar una excepción de acuerdo al escenario dado.
+
+Otra diferencia es que las corutinas no pueden ser suspendidas a partir de cualquier instrucción, sino solmanete con los llamados puntos de suspensión(\emph{suspension points}), que son llamados a funciones con anotadas de manera especial(\texttt{suspend}).
+
+\paragraph{Suspendiendo funciones} una suspensión pasa cuando se llamada a una función marcada con la palabra reservada \texttt{suspend}:
+\begin{verbatim}
+    suspend fun doSomething(foo: Foo): Bar {
+        ...
+    }
+\end{verbatim}
+Estas funciones son llamadas \emph{suspending functions} porque las llamadas a ellas pueden suspender una corutina. Las \emph{suspending functions} pueden tomar parámetros y retornar valores de la misma forma que las funciones normales, pero solamente pueden ser llamadas desde corutinas y otras \emph{suspending functions}.
+
+De hecho para iniciar una corutina, debe de haber al menos una \emph{suspending function}, y es usualmente una función lambda. El siguiente es un ejemplo simplificado de la función \texttt{async}\footnote{De la librería kotlinx.coroutines}.
+\begin{verbatim}
+    fun <T> async(block: suspend() -> T)
+\end{verbatim}
+En el ejemplo, \texttt{async} es una función normal pero el parámetro \texttt{block} es de tipo función con la palabra reservada \texttt{suspend}: \texttt{suspend() -> T}. De esta forma, cuando se pasa una función lambda a \texttt{async}, es una \emph{suspending lambda}, y se puede invocar una \emph{suspending function} desde ahi.
+
+\paragraph{\texttt{RxKotlin}}
 
 \subsection{Sistemas de tipos}
-Como se señalo en la sección \ref{sec:declaraciones}, nuevos tipos son introducidos en Kotlin a través de clases, Data Classes, Enum Classes, interfaces y objetos. 
+Como se señaló en la sección \ref{sec:declaraciones}, nuevos tipos son introducidos en Kotlin a través de clases, Data Classes, Enum Classes, interfaces y objetos. 
 
 \paragraph{Modificadores de acceso para clases:} \texttt{open}, \texttt{final} y \texttt{abstract}. 
 \begin{itemize}
     \item \texttt{final}: \underline{No} puede ser sobre escrita. Utilizada por defecto para los miembros de clase
-    \item \texttt{open}: Puede ser sobre escrita. Tiene que se especificada explícitamente
+    \item \texttt{open}: Puede ser sobreescrita. Tiene que se especificada explícitamente
     \item \texttt{abstract}: \underline{Debe} ser sobre escrita. Puede ser utilizada solamente en clases abstractas, los miembros abstractos no pueden tener una implementación
     \item \texttt{override}: sobre escribe un miembro de una super clase o interfaz. El miembro sobreescrito está abierto por defecto, sino está marcado como \texttt{final}. 
 \end{itemize}
@@ -357,11 +402,166 @@ Como se señalo en la sección \ref{sec:declaraciones}, nuevos tipos son introdu
     \item \texttt{private}. Visible en una clase
 \end{itemize}
 
+\subsubsection{Herencia}
+Todas las clases en Kotlin tienen una superclase \texttt{Any} en común, esta es la superclase por defecto para una clase sin ningún super tipo declarado:
+\begin{verbatim}
+    class Example // Implícitamente hereda de Any
+\end{verbatim}
+
+Para declarar un super tipo de forma explícita, se pone el tipo después de dos puntos en el encabezado de la clase:
+\begin{verbatim}
+    open class Base(p: Int)
+    
+    class Derived(p: Int) : Base(p)
+\end{verbatim}
+ 
+Si la clase derivada tiene un constructor primario, la clase base puede (y debe) ser inicializada de una vez, utilizando los parámetros del constructor primario. Si la clase no tiene un constructor primario, entonces cada constructor secundario tiene que inicializar el tipo base utilizando la palabra reservada \texttt{super}, o bien, delegar a que otro constructor lo haga. 
+
+\begin{verbatim}
+    class MyView : View {
+        constructor(ctx: Context) : super(ctx)
+        
+        constructor(ctx: Context, attrs: AttributeSet) : super(ctx, attrs)
+    }
+\end{verbatim}
+
+\subsubsection{Sobreescritura de Métodos}
+Kotlin requiere anotaciones explícitas para miembros que pueden ser sobreescritos(\texttt{open}) y para las sobreescrituras como tal:
+\begin{verbatim}
+    open class Base {
+        open fun v() {}
+        fun nv() {}
+    }
+    class Derived() : Base() {
+        override fun v() {}
+    }
+\end{verbatim}
+
+La palabra reservada \texttt{override} es requerida en \texttt{Derived.v()}. Si no hay una anotación \texttt{open} en una función, como en \texttt{Base.nv()}, la declaración de un métodos con la misma firma en una subclase sería ilegal.
+
+\subsubsection{Extensiones}
+De manera similar a \texttt{C\#}, Kotlin proporciona la habilidad de extender una clase con nueva funcionalidad sin tener que heredar de la clase o usar algún tipo de patrón de diseño como el patrón decorador\footnote{Patrón Decorador: \url{https://en.wikipedia.org/wiki/Decorator_pattern}}. Esto se realiza por medio de una declaración especial llamada extensión. Kotlin soporta funciones y de propiedades extendidas (\emph{extension functions} y \emph{property extension} ).
+
+\paragraph{Extension functions} Para su declaración se necesita añadir el tipo que va a ser extendido como prefijo del nombre. El siguiente código añade la función \texttt{swap} a \emph{MutableList<Int>}:
+\begin{verbatim}
+    fun MuchableList<Int>.swap(index1: Int, index2: Int) {
+        val tmp = this[index1] //'this' corresponde a la lista
+        this[index1] = this[index2]
+        this[index2] = tmp
+    }
+   // Uso
+   val l = mutableListOf(1, 2, 3)
+   l.swap(0,2) 
+\end{verbatim}
+La palabra reservada \texttt{this} dentro de un \emph{extension function} corresponde al objecto que es pasado antes del punto.
+
+\paragraph{Las extensiones son resueltas estáticamente} Las extensiones no modifican las clases con su extención. Cuando se define una extensión, no se insertan nuevos miembros en la clase sino que se hace que las funciones puedan ser invocadas por medio de la notación basada en punto (\emph{dot notation}) en las variables de este tipo.
+
+\paragraph{Extension properties} 
+\begin{verbatim}
+    val <T> List<T>.lastIndex: Int
+        get() = size - 1
+\end{verbatim}
+
 
 \subsection{Genericidad}
+Tal y como el Java, las clases en Kotlin pueden tener tipos parametrizados:
+\begin{verbatim}
+    class Box<T>(t: T) {
+        var value = t
+    }
+    //Uso
+    val box: Box<Int> = Box<Int>(1)
+    val box: Box(1) // 1 es de tipo Int, asi que se puede hacer inferir el tipo
+\end{verbatim}
+
+\subsubsection{Varianza}
+Una de las partes más difíciles de los tipo de Java son los tipos \emph{wildcard}\footnote{\url{http://www.angelikalanger.com/GenericsFAQ/JavaGenericsFAQ.html}}. Kotlin no tiene ninguno de estos.
+
+\paragraph{Declaration-site variance vs. Java wildcards} 
+Supóngase que se tiene una interfaz \texttt{Source<T>} que no tiene ningún método que tome \texttt{T} como parámetro, solamente tiene métodos que retornan \texttt{T}:
+\begin{verbatim}
+    //Java
+    interface Source<T> {
+     T nextT();
+    }
+\end{verbatim}
+Podría ser seguro almacenar una reference a una instancia de \texttt{Source<String>} en una variable de tipo \texttt{Source<Object>}, pero Java no sabe de esto y lo prohibe:
+\begin{verbatim}
+    //Java
+    void demo(Source<String> strs) {
+        Source<Object> objects = strs // NO se permite en Java
+    }
+\end{verbatim}
+Para arreglar esto, se tiene que declarar \texttt{objects} de tipo \texttt{Source<? extends Object>}. En Kotlin, existe una forma de explicar esto al compilador. Se le llama \emph{declaration-site variance}: se puede another el tipo parametrizado \texttt{T} de \texttt{Source} para asegurarse de que solo se devuelve(produce) a partir de miembros de \texttt{Source<T>}. Para hacer esto se proporciona el modificador \texttt{out}.
+\begin{verbatim}
+    interface Source<out T> {
+        fun nextT() : T
+    }
+    
+    fun demo(strs : Source<String>) {
+        val objects : Source<Any> = strs // Esto está bien porque T es un out-parameter
+    } 
+\end{verbatim}
+ 
+Al modificador \texttt{out} se le llama anotación de varianza y, debido a que es proporcionado en la declaración del tipo parametrizado, se llama \emph{declaration-site variance}. 
+Ademas de \texttt{out}, Kotlin provee una anotación complementaria de varianza: \texttt{in}, hace que un tipo parametrizado solo puede ser consumido pero nunca producido.
+\begin{verbatim}
+    interface Comparable<in T> {
+        operator fun compareTo(other: T) : Int
+    }    
+    
+    fun demo(x: Comparable<Number>){
+        x.compareTo(1.0) // 1.0 es de tipo Double, que es un subtipo de Number
+        // Por lo tanto, se puede asignar x a una variable de tipo Comparable<Double>
+        val y : Comparable<Double> = x // OK!
+    }
+\end{verbatim}
+
+\paragraph{Star projections}
+Existen situaciones en donde no se tiene conocimiento del tipo específico del tipo del valor. Supóngase que solamente se desea imprimir todos los elementos de un arreglo y que no importa el tipo de los elemento en ese arreglo. Para esto se puede utlizar una \emph{star projection}:
+\begin{verbatim}
+    fun printArray(array: Array<*>) {
+        array.forEach { println(it) }
+    }
+    // Uso
+    val array = arrayOf(1, 2, 3)
+    printArray(array)
+\end{verbatim}
+
+\subsubsection{Funciones genéricas}
+No solamente las clases pueden tener tipos parametrizados, las funciones también pueden tenerlo. Los tipos parametrizados se colocan antes del nombre de la función. En la figura \ref{fig:kotlin-generic-function-declaration} se puede ver un ejemplo.
+\begin{figure}[h!]
+  \includegraphics[width=8.7cm]{generic-function}
+  \caption{Declaracion de una función genérica en Kotlin. Fuente \cite{kotlin-in-action}}
+  \label{fig:kotlin-generic-function-declaration}
+\end{figure} 
+\begin{verbatim}
+    //Uso
+    val letters = ('a'..'z').toList()
+    println(letters.slice<Char>(0..2))
+    -> [a, b, b]
+    println(letters.slice(10..13))
+    -> [k, l, m, n]
+\end{verbatim}
+
+
 
 \subsection{Soporte a paradigmas}
 %% objetos, funciones, datos, etc
+Los dos grandes paradigmas soportados por Kotlin son: programación orientada a objetos y programación funcional. Características de programación orientada a objetos se han señalado en secciones anteriores y se ha visto como las clases son consideradas como ``ciudadanos de primera clase'' para introducir nuevos tipos y modelado de programas a través de interfaces, herencia, tipos parametrizados, entre otros.
+
+Además de las clases, las funciones son también consideradas de primera clase en Kotlin, lo que significa que puede ser almacenadas en variables y estructuras de datos, pasadas como argumentos y retornadas desde otra funcion de orden superior (\emph{high-order function}: una función que toma funciones como parámetro o retorna una función). Aparte de esto, Kotlin ofrece un amplio conjunto de funcionalidades para programación funcional dentro de las que destacan las expresiones lambda, \emph{data classes} e interfaces de programación para trabajar con objetos y colecciones siguiendo un estilo funcional.
+
+Kotlin permite que se pueda programar de forma funcional pero no obliga a esto. Cuando se escribe código en Kotlin se puede combinar ambos enfoques y usar las herramientas que sean más apropiadas para el problema que se resuelve.
+
+Por último, Kotlin también puede ser utlizado como un lenguaje de \emph{scripting}. Se puede utilizar las utilidad \texttt{kotlinc} como un REPL(\emph{Read-Eval-Print Loop}) o bien para ejecutar archivos de \emph{scripting} de Kotlin \texttt{.kts}
+\begin{verbatim}
+    > kotlinc // Inicia el REPL
+    > kotlinc -script sample.kts // Ejecuta el código Kotlin dentro de sample.kts
+\end{verbatim}
+
+
 
 \subsection{Soporte a ``programación en grande''}
 
