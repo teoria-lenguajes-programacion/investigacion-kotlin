@@ -1,6 +1,7 @@
 \tableofcontents
 
-\section{Introducción}
+\newpage
+%\section{Introducción}
 
 \section{Historia}
 La idea de Kotlin se concibió en el 2010 en la compañía JetBrains\footnote{\url{https://www.jetbrains.com/}}, fabricantes de herramientas de desarrollo para muchos lenguajes incluido \texttt{Java}, \texttt{C\#}, \texttt{JavaScript}, \texttt{Python}, \texttt{Ruby} y \texttt{PHP}\cite{kotlin-in-action}. El Proyecto Kotlin fue revelado en Julio del 2011. Era un nuevo lenguaje para la \emph{Java Virtual Machine} (JVM) que había estado en desarrollo por un año\cite{krill}. Dentro de la compañía se acusaba que muchos lenguajes de programación no contaban con las características que ellos estaban buscando, con la excepción de \texttt{Scala}, pero el lento tiempo de compilación de \texttt{Scala} era una deficiencia obvia. Uno de los objetivos de \texttt{Kotlin} era contar con un tiempo de compilación tan rápido como en el de \texttt{Java}.
@@ -193,6 +194,7 @@ Las propiedades cuyo valor se conoce en tiempo de compilación se pueden marcar 
 \end{verbatim}
 
 \subsubsection{Declaración de variables}
+Véase sección \ref{sec:variables-almacenamiento}.
 
 \subsubsection{Declaración de funciones y procedimientos}
 \begin{itemize}
@@ -212,6 +214,8 @@ La declaración de la función inicia con la palabra clave \texttt{fun}, seguida
     (a > b) ? a : b
 \end{verbatim}
 
+\subsubsection{Manejo del alcance de los identificadores}
+Kotlin no introduce ningún cambio en el manejo del alcance de los identificadores en comparación con Java. Los identificadores ``viven'' dentro del ámbito en el que fueron declaradas (clases, funciones, bloques).
 
 \subsection{Estructuras de control}
 
@@ -381,9 +385,12 @@ De hecho para iniciar una corutina, debe de haber al menos una \emph{suspending 
 \end{verbatim}
 En el ejemplo, \texttt{async} es una función normal pero el parámetro \texttt{block} es de tipo función con la palabra reservada \texttt{suspend}: \texttt{suspend() -> T}. De esta forma, cuando se pasa una función lambda a \texttt{async}, es una \emph{suspending lambda}, y se puede invocar una \emph{suspending function} desde ahi.
 
-\paragraph{\texttt{RxKotlin}}
+\paragraph{\texttt{RxKotlin}\cite{rxkotlin}} La programación reactiva es un paradigma de programación asincrónica que gira en torno a flujos de datos \emph{streams} y propagación de cambios. Los programas que propagan todos los cambios que afectaron sus datos o sus flujos de datos (a usuarios finales, componentes u otro programa relacionado) son llamados programas reactivos.
 
-\subsection{Sistemas de tipos}
+\texttt{RxKotlin} es una implementación específica de programación reactiva para Kotlin, que está influenciada en programación funcional. Favorece composición de funciones, evita el manejo de estados globales y efectos secundarios. Se basa en el patrón observador $\rightarrow$ productor/consumidor, con muchos operadores que permiten componer, calendarizar(\emph{scheduling}), transformar y gestionar errores.
+ 
+
+\subsection{Sistemas de tipos} \label{sec:tipos}
 Como se señaló en la sección \ref{sec:declaraciones}, nuevos tipos son introducidos en Kotlin a través de clases, Data Classes, Enum Classes, interfaces y objetos. 
 
 \paragraph{Modificadores de acceso para clases:} \texttt{open}, \texttt{final} y \texttt{abstract}. 
@@ -394,7 +401,7 @@ Como se señaló en la sección \ref{sec:declaraciones}, nuevos tipos son introd
     \item \texttt{override}: sobre escribe un miembro de una super clase o interfaz. El miembro sobreescrito está abierto por defecto, sino está marcado como \texttt{final}. 
 \end{itemize}
 
-\paragraph{Modificadores de visibilidad:}
+\paragraph{Modificadores de visibilidad:} 
 \begin{itemize}
     \item \texttt{public} (por defecto). Visible en todas partes
     \item \texttt{internal}. Visible en un módulo
@@ -561,9 +568,12 @@ Por último, Kotlin también puede ser utlizado como un lenguaje de \emph{script
     > kotlinc -script sample.kts // Ejecuta el código Kotlin dentro de sample.kts
 \end{verbatim}
 
-
-
 \subsection{Soporte a ``programación en grande''}
+Kotlin ha ganado mucha popularidad en los últimos 3 años. Esto ha sido motivado principalmente por su interoperatibilidad con Java además del soporte de primera clase de que le han brindado proyectos tales como Android y \emph{Spring Framework}, dos de los más populares dentro de la comunidad de desarrolladores de Java.
+
+Otra de las ventajas que tiene Kotlin tanto como lenguaje y plataforma es su versatilidad. Con Kotlin se puede programar aplicaciones \emph{backend} utilizando proyectos como \emph{Spring}\footnote{\url{https://spring.io/}}, Vert.x\footnote{\url{http://vertx.io/}} y Ktor\footnote{\url{https://github.com/kotlin/ktor}}. Se pueden programar aplicaciones móviles con Android. Se puede transpilar código Kotlin a JavaScript para hacer aplicaciones del lado del cliente y también para hacer aplicaciones del lado del servidor utilizando NodeJS. Por último el proyecto Kotlin/Native\footnote{\url{https://github.com/JetBrains/kotlin-native/}} es una tecnología para compilar Kotlin a binarios nativos que pueden correr sin necesidad de una máquina virtual. Este proyecto está pensado principalmente para permitir la compilación en plataformas en donde las máquinas virtuales no se pueden utilizar como en en sistemas embebidos, o cuando el desarrollador necesita producir programas que no requieran de ambientes de ejecución adicionales.
+
+\paragraph{¿Quiénes usan Kotlin?} Se ha reportado que compañías tales como Google, Amazon, Netflix, Pinterest, Uber, Foursquare, Trello, Capital One, Coursera, Basecamp, Corda, JetBrains, Pivotal, Evernote, entre otros usan Kotlin para el desarrollo de sus aplicaciones.
 
 \subsection{Pecularidades}
 %% expresiones regulares, concurrencia, concordancia de patrones, retroceso
@@ -584,6 +594,8 @@ Por último, Kotlin también puede ser utlizado como un lenguaje de \emph{script
 \bibitem{kotlin-in-android} Kotlin Blog. \emph{Kotlin on Android. Now official}. Mayo, 2017. Obtenido el 11 de Abril del 2018 de \url{https://blog.jetbrains.com/kotlin/2017/05/kotlin-on-android-now-official/}.
 
 \bibitem{kotlin-v12} Kotlin Blog. \emph{Kotlin 1.2 Released: Sharing Code between Platforms}. Noviembre, 2017. Obtenido el 11 de Abril del 2018 de \url{https://blog.jetbrains.com/kotlin/2017/11/kotlin-1-2-released/}.
+
+\bibitem{rxkotlin} Rivu Chakrabory. \emph{Reactive Programming in Kotlin}. Packt Publishing. Diciembre 2017. IBSN: 9781788473026
 
 \end{thebibliography}
 
