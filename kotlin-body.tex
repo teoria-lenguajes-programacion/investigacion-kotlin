@@ -26,7 +26,7 @@ En Kotlin, todo es un objeto en el sentido que se pueden invocar funciones y pro
 \subsubsection{Números}
 Kotlin proporciona las siguientes tipos para representar números:
 \begin{verbatim}
-    Double 64bit, Int 32bit, Float 32, Short 16bit, Long 64bit, Byte 8bit
+    Double 64bit, Int 32bit, Float 32bit, Short 16bit, Long 64bit, Byte 8bit
 \end{verbatim}
 
 %\begin{table}[h]
@@ -103,6 +103,53 @@ Existen dos palabras reservadas para declarar una variable:
 \paragraph{Almacenamiento} Debido a que Kotlin es un lenguaje construido por encima de la JVM delega el manejo del almacenamiento de variables, estructuras de datos y de control a esta. Una breve introducción sobre el manejo de la memoria en la JVM se puede encontrar en Apéndice 1.
  
 \subsection{Estructuración de datos}
+\subsubsection{\texttt{object}: declaración e instanciación combinada de una clase}
+La palabra reservada \texttt{object} define una clase y crea una instancia (es decir, objeto) de esa clase al mismo tiempo. Las diferentes formas en las que puede ser utilizado son:
+
+\paragraph{Como una declaración de un objeto} es una forma de definir un \texttt{singleton}, una clase para cual se necesita solo una instancia. Kotlin proporciona soporte para esto por medio de la declaración de un objeto. La declaración de objeto combina la declaración de una clase y la declaración de una sola instancia de la clase.
+
+\begin{verbatim}
+    object Payroll {
+        val allEmployees = arrayListOf<Person>()
+        
+        fun calculateSalary() {
+            for (person in allEmployees) {
+                ...
+            }
+        }
+    }
+\end{verbatim}
+ 
+Tal y como pasa con las clases, las declaraciones de objetos puede contener declaraciones de propiedades, métodos, bloques inicializadores, entre otros. Lo único que no se permite son constructores. A diferencia de las clases normales, las declaraciones de objetos se crean inmediatamente después del punto de definición y no a través de llamadas a constructores. Tal y como una variable, la declaración de un objeto permite llamar métodos y acceder a las propiedades por medio del nombre del objeto a la izquierda seguido del punto(\texttt{.}).
+\begin{verbatim}
+    Payroll.allEmployees.add(Person(...)
+    Payroll.calculateSalary()
+\end{verbatim}
+Las declaraciones de objetos pueden también heredar de clases e interfaces.
+
+
+\paragraph{Companion objects:} utilizados como \emph{factory methods} y miembros estáticos. Las clases en Kotlin no pueden tener miembros estáticos. A modo de reemplazo, Kotlin utiliza funciones a nivel de paquetes (que pueden reemplazar los métodos estáticos que hay en Java en muchas situaciones) y declaraciones de objetos (que reemplazan propiedades estáticas). Uno de los objetos definidos en una clase puede ser utilizar la palabra reservada: \texttt{companion}. Al hacerlo, se gana la habilidad de acceder a los métodos y propiedades de este objeto directamente a través del nombre de la clase que lo contiene. La sintaxis resultante luce exactamente como una invocación a un método estático en Java.
+
+\begin{verbatim}
+class A {
+    companion object {
+        fun bar() {
+            println("Companion object called")
+        }
+    }
+}
+
+>>> A.bar()
+Companion object called
+\end{verbatim}
+
+\paragraph{Object expression}. La palabra reservada \texttt{object} puede ser usada para declarar objetos anónimos. Los objetos anónimos reemplazan el uso de clases anónimas internas en Java. En la figura \ref{fig:object-expression} se puede ver como se puede convertir un uso típico de una clase anónima interna en Java - un \emph{event listener} - a Kotlin.
+
+\begin{figure}[h!]
+  \includegraphics[width=11cm]{object-expression}
+  \caption{Declaracion de una función en Kotlin. Fuente \cite{kotlin-in-action}}
+  \label{fig:object-expression}
+\end{figure} 
 
 \subsection{Declaraciones, manejo del alcance de los identificadores} \label{sec:declaraciones}
 
@@ -128,7 +175,7 @@ Nuevos tipos son introducidos en Kotlin a través de clases, \texttt{Data Classe
     val admin = User("John", 40)
 \end{verbatim}
 
-El compilador automáticamente deriva los siguientes miembros par todas las propiedades declaradas en el constructor primario: \texttt{equals()/hashCode()}, \texttt{toString()}, \texttt{copy()}. Para asegurar la consistencia y significado del código generado, las \emph{data classes} tiene que tener los siguietes requisitos:
+El compilador automáticamente deriva los siguientes miembros para todas las propiedades declaradas en el constructor primario: \texttt{equals(), hashCode()}, \texttt{toString()}, \texttt{copy()}. Para asegurar la consistencia y significado del código generado, las \emph{data classes} tiene que tener los siguietes requisitos:
 \begin{itemize}
     \item El constructor primario necesita tener al menos un parámetro
     \item Todos los parámetros del constructor primario necesitan estar marcados con \texttt{val} o \texttt{var}
@@ -596,6 +643,8 @@ Otra de las ventajas que tiene Kotlin tanto como lenguaje y plataforma es su ver
 \bibitem{kotlin-v12} Kotlin Blog. \emph{Kotlin 1.2 Released: Sharing Code between Platforms}. Noviembre, 2017. Obtenido el 11 de Abril del 2018 de \url{https://blog.jetbrains.com/kotlin/2017/11/kotlin-1-2-released/}.
 
 \bibitem{rxkotlin} Rivu Chakrabory. \emph{Reactive Programming in Kotlin}. Packt Publishing. Diciembre 2017. IBSN: 9781788473026
+
+\bibitem{kotlin-ref} Kotlin. \emph{Kotlin Reference}. \url{https://kotlinlang.org/docs/reference}
 
 \end{thebibliography}
 
