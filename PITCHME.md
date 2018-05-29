@@ -99,13 +99,11 @@ Palabras reservadas para declarar una variable:
 2. `var`: mutable, puede cambiar
 
 Se delega el manejo del almacenamiento a la JVM
----
-
-### Estructuración de datos
 
 ---
 
-### Declaraciones, alcance de identificadores 
+### Declaraciones, alcance de identificadores
+- **Declaración de tipos**: nuevos tipos son introducidos a través de `Data Classes, Enum Classes`, interfaces, clases y objetos
 
 ---
 
