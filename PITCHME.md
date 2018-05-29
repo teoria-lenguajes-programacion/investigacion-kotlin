@@ -185,7 +185,6 @@ window.addMouseListener{
     override fun mouseClicked(e: MouseEvent){
       ...
     }
-
     override fun mouseEntered(e: MouseEvent){
       ...
     }
@@ -200,7 +199,7 @@ window.addMouseListener{
 @[31-37](Interfaz con implementación)
 @[39-51](object: declaración e instanciación combinada de una clase)
 @[53-68](companion object)
-@[69-83](object expression)
+@[69-82](object expression)
 
 ---
 
