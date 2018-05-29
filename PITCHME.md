@@ -94,7 +94,7 @@ val question = "how old are you?"
 val answer: Int = 42
 // Si la variable no se inicializa se necesita el tipo
 ```
-Existen dos palabras reservadas para declarar una variable: `val, var`
+Palabras reservadas para declarar una variable: `val, var`
 - `val`: inmutable (final)
 - `var`: mutable, puede cambiar
 ---
