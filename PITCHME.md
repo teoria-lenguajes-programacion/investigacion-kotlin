@@ -190,6 +190,26 @@ window.addMouseListener{
     }
   }
 }
+
+/* Declaración de funciones*/
+fun max(a: Int, b: Int): Int {
+  return if (a > b) a else b
+} 
+
+/* Sigle Expression Functions*/
+fun double(x: Int): Int = x * 2
+
+/* "Procedimientos" - funciones que retornan Unit 
+Si una función no retorna ningún valor útil, su 
+tipo de retorno es Unit. Unit es un tipo con solo 
+un valor: Unit */
+fun printHello(name: String?): Unit {
+  if(name != null)
+    println("Hello ${name}")
+  else
+    println("Hi There!")
+    // "return Unit" o "return" es opcional
+}
 ```
 
 @[1-9](Declaración de una Clase)
@@ -200,6 +220,9 @@ window.addMouseListener{
 @[39-51](object: declaración e instanciación combinada de una clase)
 @[53-68](companion object)
 @[69-82](object expression)
+@[84-87](Declaración de función)
+@[89-90](Single-Expression functions)
+@[92-102](Procedimientos)
 
 ---
 
