@@ -148,8 +148,8 @@ interface Focusable {
 }
 ```
 
-@[1,9](Declaración de una Clase)
-@[10,13](Data Classes)
+@[1-9](Declaración de una Clase)
+@[10-13](Data Classes)
 
 ---
 
