@@ -148,6 +148,8 @@ interface Focusable {
 }
 ```
 
+@[1,2](Declaración de una Clase)
+
 ---
 
 ### Estructuras de Control
