@@ -149,8 +149,10 @@ interface Focusable {
 ```
 
 @[1-9](Declaración de una Clase)
-@[10-13](Data Classes)
-
+@[11-13](Data Classes)
+@[15-19](Enum Classes)
+@[22-29](Interfaces)
+@[31-37](Interfaz con implementación)
 ---
 
 ### Estructuras de Control
