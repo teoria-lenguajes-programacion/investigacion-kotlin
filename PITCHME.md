@@ -1,8 +1,13 @@
 # Kotlin
 
-> Carlos Martin Flores González 
+##### Tecnológico de Costa Rica
+##### Escuela de Ingeniería en Computación
+##### Maestría en Computación
+##### MC-8812 Teoría de los Lenguajes de Programación
 
-### A GitPitch Presentation Template
+> Carlos Martín Flores González 
+
+Sábado 26 de Mayo, 2018
 
 ---
 
