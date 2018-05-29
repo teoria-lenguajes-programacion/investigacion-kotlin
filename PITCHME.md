@@ -128,6 +128,24 @@ enum class Color{
   RED, ORANGE, YELLOW, GREEN, BLUE, PINK
 }
 val primaryColor = Color.GREEN
+
+// Interfaces: similares a las de Java8
+interface Clickable {
+  fun click()
+}
+class Button : Clickable {
+  override fun click() = println("I was clicked")
+}
+val submitBtn = Clickable = Button()
+submitBtn.click()
+
+// Interfaz con implementaciones
+interface Focusable {
+  fun setFocus(b: Boolean) =
+    println("I ${if (b) "got" else "lost"} focus")
+
+  fun showOf() = println("I'm focusable")  
+}
 ```
 
 ---
