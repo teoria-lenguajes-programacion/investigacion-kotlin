@@ -24,7 +24,7 @@ MC-8812 Teoría de los Lenguajes de Programación**</small>
 - Concebido en el 2010 por [JetBrains](https://www.jetbrains.com)
 - Escrito para la _Java Virtual Machine_
 - _Open Source_
-- Para propósito general, _Client-Side_ (Kotlin JS), Android, Nativo
+- Para propósito general, _Client-Side_ (Kotlin JS), Android, Nativo, _scripting_
 - Versión `1.0` lanzada en 2016
 
 ---
@@ -85,8 +85,8 @@ print("i = $i")
 ```
 
 ---
-
 ### Variables y Almacenamiento
+Para declarar una variable: `nombre + tipo (opcional)`
 
 ---
 
