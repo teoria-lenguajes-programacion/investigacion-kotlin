@@ -98,7 +98,7 @@ Palabras reservadas para declarar una variable:
 1. `val`: inmutable (final)
 2. `var`: mutable, puede cambiar
 
-Kotlin delega el manejo del almacenamiento a la JVM
+Se delega el manejo del almacenamiento a la JVM
 ---
 
 ### Estructuración de datos
