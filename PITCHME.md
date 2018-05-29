@@ -22,7 +22,7 @@ MC-8812 Teoría de los Lenguajes de Programación**</small>
 ## Kotlin
 
 - Concebido en el 2010 por [JetBrains](https://www.jetbrains.com)
-- Escrito para la _Java Virtual Machine_
+- Escrito para la _Java Virtual Machine_(JVM)
 - _Open Source_
 - Para propósito general, _Client-Side_ (Kotlin JS), Android, Nativo, _scripting_
 - Versión `1.0` lanzada en 2016
@@ -85,7 +85,7 @@ print("i = $i")
 ```
 
 ---
-### Variables y Almacenamiento
+#### Variables y Almacenamiento
 Para declarar una variable:  
 `nombre + tipo (opcional)`
 
@@ -97,6 +97,8 @@ val answer: Int = 42
 Palabras reservadas para declarar una variable:
 1. `val`: inmutable (final)
 2. `var`: mutable, puede cambiar
+
+Kotlin delega el manejo del almacenamiento a la JVM
 ---
 
 ### Estructuración de datos
