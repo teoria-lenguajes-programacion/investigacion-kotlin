@@ -27,6 +27,7 @@ MC-8812 Teoría de los Lenguajes de Programación**</small>
 - Para propósito general, _Client-Side_ (Kotlin JS), Android, Nativo
 - Versión `1.0` lanzada en 2016
 
+---
 ## Historia
 JetBrains buscaba una alternativa para Java. Buscaban:
 - Tipos estáticos
