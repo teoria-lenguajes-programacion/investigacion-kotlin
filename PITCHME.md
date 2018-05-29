@@ -68,6 +68,19 @@ fun main (args: Array<String>){
 - _Strings_: `String`. Son inmutables, indexables (`s[i]`), iterables 
 
 ---
+##### _String Literals_
+```kotlin
+val msg = "Hello World"
+val multi = """
+  multi line
+  text!
+"""
+```
+
+##### _String Templates_
+
+
+---
 
 ### Variables y Almacenamiento
 
