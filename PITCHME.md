@@ -106,6 +106,7 @@ Se delega el manejo del almacenamiento a la JVM
 - **Declaración de tipos**: nuevos tipos son introducidos a través de `Data Classes, Enum Classes`, interfaces, clases y objetos
 
 ```kotlin
+// Declaración de una clase
 class Invoice { }
 class User(_nickname: String){
   val nickname = _nickname;
