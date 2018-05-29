@@ -103,7 +103,7 @@ Se delega el manejo del almacenamiento a la JVM
 ---
 
 ### Declaraciones, alcance de identificadores
-- **Declaración de tipos:** nuevos tipos son introducidos a través de `Data Classes, Enum Classes`, interfaces, clases y objetos
+- **Declaración de tipos:** nuevos tipos son introducidos a través de `Data Classes, Enum Classes`, interfaces, clases y objetos.
 - **Alcance de identificadores:** no se introduce ningún cambio en el manejo del alcance de los identificadores en comparación con Java. Los identificadores "viven" dentro del ámbito en el que fueron declaradas.
 
 ---
@@ -111,7 +111,6 @@ Se delega el manejo del almacenamiento a la JVM
 ```kotlin
 // Declaración de una clase
 class Invoice { 
-  
 }
 // Clase con constructor primario
 class User(_nickname: String){
@@ -149,7 +148,8 @@ interface Focusable {
 }
 ```
 
-@[1,2](Declaración de una Clase)
+@[1,9](Declaración de una Clase)
+@[10,13](Data Classes)
 
 ---
 
