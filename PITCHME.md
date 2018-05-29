@@ -220,9 +220,9 @@ fun printHello(name: String?): Unit {
 @[39-51](object: declaración e instanciación combinada de una clase)
 @[53-68](companion object)
 @[69-82](object expression)
-@[84-87](Declaración de función)
-@[89-90](Single-Expression functions)
-@[92-102](Procedimientos)
+@[83-87](Declaración de función)
+@[88-90](Single-Expression functions)
+@[91-102](Procedimientos)
 
 ---
 
