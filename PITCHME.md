@@ -1,13 +1,13 @@
 # Kotlin
 
-<small>Tecnológico de Costa Rica</small>  
+<small>Tecnológico de Costa Rica    
 Escuela de Ingeniería en Computación  
 Maestría en Computación  
-MC-8812 Teoría de los Lenguajes de Programación  
+MC-8812 Teoría de los Lenguajes de Programación</small>  
 
-Carlos Martín Flores González   
+> Carlos Martín Flores González   
 
-Sábado 26 de Mayo, 2018
+<small>Sábado 26 de Mayo, 2018</small>
 
 ---
 
