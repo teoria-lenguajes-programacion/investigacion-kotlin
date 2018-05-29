@@ -176,6 +176,21 @@ class A {
 
 A.bar()
 //Companion object called
+
+/* puede ser usada para declarar objetos anónimos. Los 
+objetos anónimos reemplazan el uso de clases anónimas 
+internas en Java. */
+window.addMouseListener{
+  object: MouseAdapter(){
+    override fun mouseClicked(e: MouseEvent){
+      ...
+    }
+
+    override fun mouseEntered(e: MouseEvent){
+      ...
+    }
+  }
+}
 ```
 
 @[1-9](Declaración de una Clase)
@@ -183,8 +198,9 @@ A.bar()
 @[15-19](Enum Classes)
 @[21-29](Interfaces)
 @[31-37](Interfaz con implementación)
-@[40-51](object: declaración e instanciación combinada de una clase)
+@[39-51](object: declaración e instanciación combinada de una clase)
 @[53-68](companion object)
+@[70-83](object expression)
 
 ---
 
