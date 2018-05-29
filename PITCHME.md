@@ -108,6 +108,7 @@ Se delega el manejo del almacenamiento a la JVM
 ```kotlin
 // Declaración de una clase
 class Invoice { }
+// Clase con constructor primario
 class User(_nickname: String){
   val nickname = _nickname;
 }
