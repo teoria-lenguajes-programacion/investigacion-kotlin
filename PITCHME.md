@@ -11,6 +11,16 @@ MC-8812 Teoría de los Lenguajes de Programación**</small>
 
 ---
 
+## Agenda
+
+- Historia
+- Características del Lenguaje
+- Ejemplos/Demo
+- Conclusiones
+
+
+---
+
 ## Tips!
 
 <br>
