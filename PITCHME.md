@@ -17,7 +17,66 @@ MC-8812 Teoría de los Lenguajes de Programación**</small>
 - Características del Lenguaje
 - Ejemplos/Demo
 - Conclusiones
+---
 
+## Historia
+
+---
+
+## Características del Lenguaje
+
+---
+
+### Valores y Tipos de Datos Base
+
+---
+
+### Variables y Almacenamiento
+
+---
+
+### Estructuración de datos
+
+---
+
+### Declaraciones, alcance de identificadores 
+
+---
+
+### Estructuras de Control
+
+---
+
+### Secuenciadores
+
+---
+
+### Mecanismos de modularización
+
+---
+
+### Soporte a concurrencia, paralelismo, distribución
+
+---
+
+### Sistemas de Tipos
+
+---
+
+### Genericidad
+
+---
+### Soporte a Paradigmas
+
+---
+### Soporte a "Programación en grande"
+
+---
+## Análisis y Conclusiones
+
+---
+
+## Ejemplos/Demo
 
 ---
 
