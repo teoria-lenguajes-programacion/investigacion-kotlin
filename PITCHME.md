@@ -37,7 +37,7 @@ JetBrains buscaba una alternativa para Java. Se buscaba:
 
 ---
 
-## Hola Mundo!
+#### Mi primer programa en Kotlin
 
 ```kotlin
 
