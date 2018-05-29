@@ -115,6 +115,21 @@ class User(_nickname: String){
 val invoice = Invoice()
 val user = User("Luigi");
 ```
+
+---
+
+```kotlin
+// Data Classes: propósito principal es contener datos
+data class User(val name: String, val age: Int)
+val admin = User("John", 40)
+
+// Enum Classes
+enum class Color{
+  RED, ORANGE, YELLOW, GREEN, BLUE, PINK
+}
+val primaryColor = Color.GREEN
+```
+
 ---
 
 ### Estructuras de Control
