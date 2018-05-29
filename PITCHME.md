@@ -102,7 +102,7 @@ Se delega el manejo del almacenamiento a la JVM
 
 ---
 
-#### Declaraciones, alcance de identificadores
+### Declaraciones, alcance de identificadores
 - **Declaración de tipos:** nuevos tipos son introducidos a través de `Data Classes, Enum Classes`, interfaces, clases y objetos
 - **Alcance de identificadores:** no se introduce ningún cambio en el manejo del alcance de los identificadores en comparación con Java. Los identificadores "viven" dentro del ámbito en el que fueron declaradas.
 
