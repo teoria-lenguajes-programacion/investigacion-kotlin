@@ -161,7 +161,9 @@ Payroll.allEmployees.add(Person(...)
 Payroll.calculateSalary()
 
 /*
-Companion objects: utilizados como factory methods y miembros estáticos. Las clases en Kotlin no pueden tener miembros estáticos.
+Companion objects: utilizados como factory methods y 
+miembros estáticos. Las clases en Kotlin no pueden 
+tener miembros estáticos.
 */
 class A {
     companion object {
@@ -181,7 +183,7 @@ A.bar()
 @[21-29](Interfaces)
 @[31-37](Interfaz con implementación)
 @[39-50](object: declaración e instanciación combinada de una clase)
-@[52-65](companion object)
+@[52-67](companion object)
 
 ---
 
