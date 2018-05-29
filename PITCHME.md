@@ -146,13 +146,43 @@ interface Focusable {
 
   fun showOf() = println("I'm focusable")  
 }
+
+// object: declaración e instanciación combinada de una clase
+object Payroll {
+    val allEmployees = arrayListOf<Person>()
+    
+    fun calculateSalary() {
+        for (person in allEmployees) {
+            ...
+        }
+    }
+}
+Payroll.allEmployees.add(Person(...)
+Payroll.calculateSalary()
+
+/*
+Companion objects: utilizados como factory methods y miembros estáticos. Las clases en Kotlin no pueden tener miembros estáticos.
+*/
+class A {
+    companion object {
+        fun bar() {
+            println("Companion object called")
+        }
+    }
+}
+
+A.bar()
+//Companion object called
 ```
 
 @[1-9](Declaración de una Clase)
 @[11-13](Data Classes)
 @[15-19](Enum Classes)
-@[22-29](Interfaces)
+@[21-29](Interfaces)
 @[31-37](Interfaz con implementación)
+@[39-50](object: declaración e instanciación combinada de una clase)
+@[52-65](companion object)
+
 ---
 
 ### Estructuras de Control
