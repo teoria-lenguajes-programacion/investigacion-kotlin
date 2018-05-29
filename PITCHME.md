@@ -29,7 +29,7 @@ MC-8812 Teoría de los Lenguajes de Programación**</small>
 
 ---
 ## Historia
-JetBrains buscaba una alternativa para Java. Buscaban:
+JetBrains buscaba una alternativa para Java. Se buscaba:
 - Tipos estáticos
 - Compatibilidad con el código Java
 - Productivo
@@ -42,6 +42,7 @@ JetBrains buscaba una alternativa para Java. Buscaban:
 ---
 
 ### Valores y Tipos de Datos Base
+- Números: `Double, Float, Short, Long, Byte`
 
 ---
 
