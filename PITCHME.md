@@ -13,13 +13,18 @@ MC-8812 Teoría de los Lenguajes de Programación**</small>
 
 ## Agenda
 
-- Historia
+- Introducción 
 - Características del Lenguaje
 - Ejemplos/Demo
 - Conclusiones
 ---
 
-## Historia
+## Kotlin
+
+- Concebido en el 2010 por [JetBrains](https://www.jetbrains.com)
+- _Open Source_
+- Versión `1.0` lanzada en 2016
+- Para propósito general, _Client-Side_ (Kotlin JS), Android, Nativo
 
 ---
 
