@@ -95,8 +95,8 @@ val answer: Int = 42
 // Si la variable no se inicializa se necesita el tipo
 ```
 Palabras reservadas para declarar una variable:
-`val`: inmutable (final)  
-`var`: mutable, puede cambiar
+1. `val`: inmutable (final)
+2. `var`: mutable, puede cambiar
 
 Se delega el manejo del almacenamiento a la JVM
 ---
