@@ -147,7 +147,8 @@ interface Focusable {
   fun showOf() = println("I'm focusable")  
 }
 
-// object: declaración e instanciación combinada de una clase
+/* object: declaración e instanciación combinada 
+de una clase */
 object Payroll {
     val allEmployees = arrayListOf<Person>()
     
@@ -182,8 +183,8 @@ A.bar()
 @[15-19](Enum Classes)
 @[21-29](Interfaces)
 @[31-37](Interfaz con implementación)
-@[39-50](object: declaración e instanciación combinada de una clase)
-@[52-67](companion object)
+@[40-51](object: declaración e instanciación combinada de una clase)
+@[53-68](companion object)
 
 ---
 
