@@ -72,13 +72,17 @@ fun main (args: Array<String>){
 ```kotlin
 val msg = "Hello World"
 val multi = """
-  multi line
-  text!
+  This is a multi line
+  text. Awesome!
 """
 ```
 
 ##### _String Templates_
-
+```kotlin
+val i = 10
+print("i = $i")
+// imprime "i = 10"
+```
 
 ---
 
