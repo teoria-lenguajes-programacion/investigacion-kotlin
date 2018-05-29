@@ -177,7 +177,7 @@ class A {
 A.bar()
 //Companion object called
 
-/* puede ser usada para declarar objetos anónimos. Los 
+/* object puede ser usado para declarar objetos anónimos. Los 
 objetos anónimos reemplazan el uso de clases anónimas 
 internas en Java. */
 window.addMouseListener{
@@ -200,7 +200,7 @@ window.addMouseListener{
 @[31-37](Interfaz con implementación)
 @[39-51](object: declaración e instanciación combinada de una clase)
 @[53-68](companion object)
-@[70-83](object expression)
+@[69-83](object expression)
 
 ---
 
