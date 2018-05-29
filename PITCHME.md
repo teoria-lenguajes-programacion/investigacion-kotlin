@@ -1,6 +1,6 @@
 # Kotlin
 
-Tecnológico de Costa Rica  
+<small>Tecnológico de Costa Rica</small>
 Escuela de Ingeniería en Computación  
 Maestría en Computación  
 MC-8812 Teoría de los Lenguajes de Programación  
