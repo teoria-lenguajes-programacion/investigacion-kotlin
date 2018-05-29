@@ -5,9 +5,9 @@ Escuela de Ingeniería en Computación
 Maestría en Computación  
 MC-8812 Teoría de los Lenguajes de Programación</small>  
 
-> Carlos Martín Flores González   
+<small>*Carlos Martín Flores González*</small>     
 
-<small>Sábado 26 de Mayo, 2018</small>
+<small>Sábado 2 de Junio, 2018</small>
 
 ---
 
