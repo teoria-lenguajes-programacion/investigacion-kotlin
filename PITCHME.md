@@ -86,7 +86,8 @@ print("i = $i")
 
 ---
 ### Variables y Almacenamiento
-Para declarar una variable: `nombre + tipo (opcional)`
+Para declarar una variable:  
+`nombre + tipo (opcional)`
 
 ---
 
