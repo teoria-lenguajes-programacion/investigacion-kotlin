@@ -29,7 +29,8 @@ MC-8812 Teoría de los Lenguajes de Programación**</small>
 
 ---
 ## Historia
-JetBrains buscaba una alternativa para Java. Se buscaba:
+JetBrains buscaba una alternativa para Java.  
+Se buscaba:
 - Tipos estáticos
 - Compatibilidad con el código Java
 - Productivo
@@ -47,6 +48,7 @@ data class Person(val name: String,
 fun main (args: Array<String>){
   val persons = listOf(Person("Alice"), 
                        Person("Bob", age = 29))
+  
   val oldest  = persons.maxBy { it.age ? : 0}
   println("The oldest is: $oldest")
 }
@@ -61,6 +63,9 @@ fun main (args: Array<String>){
 
 ### Valores y Tipos de Datos Base
 - Números: `Double, Float, Short, Long, Byte`
+- Booleanos: `Boolean`. Dos tipos: `true, false`
+- _Arrays_: `Array`
+- _Strings_: `String`. Son inmutables, indexables (`s[i]`), iterables 
 
 ---
 
