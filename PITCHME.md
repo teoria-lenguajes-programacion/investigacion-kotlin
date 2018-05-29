@@ -102,7 +102,7 @@ Se delega el manejo del almacenamiento a la JVM
 
 ---
 
-### Declaraciones, alcance de identificadores
+#### Declaraciones, alcance de identificadores
 - **Declaración de tipos**: nuevos tipos son introducidos a través de `Data Classes, Enum Classes`, interfaces, clases y objetos
 
 ```kotlin
