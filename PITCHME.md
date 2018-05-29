@@ -89,6 +89,11 @@ print("i = $i")
 Para declarar una variable:  
 `nombre + tipo (opcional)`
 
+```kotlin
+val question = "how old are you?"
+val answer: Int = 42
+// Si la variable no se inicializa se necesita el tipo
+```
 ---
 
 ### Estructuración de datos
