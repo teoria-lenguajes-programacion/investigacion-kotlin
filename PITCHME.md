@@ -237,7 +237,7 @@ if (a > b){
 }
 
 // If como expresión
-var max = a
+var max = if(a > b) a else b
 
 /* Expresion when: reemplaza al operador switch de
 lenguajes basados en C */
@@ -278,8 +278,8 @@ do{
 } while (y != null) // "y" es visible aqui
 ```
 @[1-10](If-Else)
-@[12-24](Declaración de una Clase)
-@[26-35](Declaración de una Clase)
+@[11-25](Ciclo For)
+@[26-35](Ciclo While, Do-While)
 
 ---
 
