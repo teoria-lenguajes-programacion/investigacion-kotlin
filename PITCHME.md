@@ -269,19 +269,18 @@ for(i in 6 downTo 0 step 2){
 /* Ciclos while: tanto el while como el do-while
 trabajan de la misma forma que en Java
 */
+while(x > 0){
+  x--
+}
+
+do{
+  val y = retrieveData()
+} while (y != null) // "y" es visible aqui
 ```
-> Blockquotes are very handy in email to emulate reply text.
-> This line is part of the same quote.
-> Blockquotes are very handy in email to emulate reply text.
-> This line is part of the same quote.
-> Blockquotes are very handy in email to emulate reply text.
-> This line is part of the same quote.
-> Blockquotes are very handy in email to emulate reply text.
-> This line is part of the same quote.
-> Blockquotes are very handy in email to emulate reply text.
-> This line is part of the same quote.
-> Blockquotes are very handy in email to emulate reply text.
-> This line is part of the same quote.
+@[1-10](If-Else)
+@[12-24](Declaración de una Clase)
+@[26-35](Declaración de una Clase)
+
 ---
 
 ### Secuenciadores
