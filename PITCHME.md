@@ -367,6 +367,8 @@ En Kotlin se pueden utilizar todas las librerías `Futures`, `CompletableFutures
 
 _Everything like in blocking code_
 
+[KotlinConf 2017 - Corutinas](https://www.youtube.com/watch?v=_hfBv0a09Jc&t=1233s)
+
 ---
 
 ###### Soporte a concurrencia, paralelismo, distribución (Cont.)
