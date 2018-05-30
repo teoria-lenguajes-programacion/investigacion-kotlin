@@ -196,10 +196,10 @@ fun max(a: Int, b: Int): Int {
   return if (a > b) a else b
 } 
 
-/* Sigle Expression Functions*/
+/* Single Expression Functions*/
 fun double(x: Int): Int = x * 2
 
-/* "Procedimientos" - funciones que retornan Unit 
+/* "Procedimientos" - funciones que retornan Unit. 
 Si una función no retorna ningún valor útil, su 
 tipo de retorno es Unit. Unit es un tipo con solo 
 un valor: Unit */
@@ -227,7 +227,32 @@ fun printHello(name: String?): Unit {
 ---
 
 ### Estructuras de Control
+```kotlin
+// If-else
+var max : Int
+if (a > b){
+  max = a
+} else {
+  max = b
+}
 
+// If como expresión
+var max = a
+val max = if(a > b) a else b
+```
+/* Expression when: reemplaza al operador switch de
+lenguajes basados en C */
+when(x){
+  1 -> print("x == 1")
+  2 -> print("x == 2")
+  3,4 -> print("x == 3 or x == 4")
+  in 5..10 -> print("x is between 5 and 10")
+  !in 20..30 -> print("x is out of range")
+  else -> {
+    print("none of the above")
+  }
+}
+```
 ---
 
 ### Secuenciadores
