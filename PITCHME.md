@@ -365,13 +365,12 @@ En Kotlin se pueden utilizar todas las librerías `Futures`, `CompletableFutures
 
 **Corutinas**: A partir de la versión 1.1 de Kotlin se introdujo el concepto de Corutina que proporciona una forma de evitar bloquear un hilo y reemplazarlo con una operación más económica y de mayor control: la suspensión de una corutina.  
 
-_Everything like in blocking code_
-
 [KotlinConf 2017 - Corutinas](https://www.youtube.com/watch?v=_hfBv0a09Jc&t=1233s)
 
 ---
 
 ###### Soporte a concurrencia, paralelismo, distribución (Cont.)
+_Everything like in blocking code_
 ```kotlin
 /* 
 Suspendiendo funciones: esto sucede cuando se 
