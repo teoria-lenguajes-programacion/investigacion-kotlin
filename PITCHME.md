@@ -238,8 +238,7 @@ if (a > b){
 
 // If como expresión
 var max = a
-val max = if(a > b) a else b
-```
+
 /* Expression when: reemplaza al operador switch de
 lenguajes basados en C */
 when(x){
