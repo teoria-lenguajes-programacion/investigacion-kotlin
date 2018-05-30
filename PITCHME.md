@@ -292,6 +292,33 @@ do{
 - Para lanzar una excepción se usa `throw`
 
 ---
+#### Secuenciadores (continuación)
+```kotlin
+// break y continue con etiquetas
+loop@ for(in in 1..100){
+  for(j in 1..100){
+    if(...) break@loop
+  }
+}
+
+// Lanzar una excepción
+throw MyException("Houston we have problem!")
+
+// Atrapar una excepción
+try{
+  // algún código
+} catch (e: SomeException){
+  /* código que maneja la excepción.
+  Pueden haber uno o varios bloques catch
+  */
+} finally {
+  /* bloque finalizador opcional, de ser
+  incluido, se ejecutará siempre. */
+}
+
+
+```
+---
 
 ### Mecanismos de modularización
 
