@@ -278,8 +278,9 @@ do{
 } while (y != null) // "y" es visible aqui
 ```
 @[1-10](If-Else)
-@[11-25](Ciclo For)
-@[26-35](Ciclo While, Do-While)
+@[12-25](When)
+@[25-37](Ciclo For)
+@[39-48](Ciclo For)
 
 ---
 
