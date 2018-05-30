@@ -363,6 +363,9 @@ En Kotlin se pueden utilizar todas las librerías `Futures`, `CompletableFutures
 ---
 ###### Soporte a concurrencia, paralelismo, distribución
 
+**Corutinas**: A partir de la versión 1.1 de Kotlin se introdujo el concepto de Corutina que proporciona una forma de evitar bloquear un hilo y reemplazarlo con una operación más económica y de mayor control: la suspensión de una corutina.
+
+
 ---
 
 
