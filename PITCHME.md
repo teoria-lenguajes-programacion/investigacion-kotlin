@@ -441,7 +441,8 @@ Modificadores de visibilidad
 - private: Visible en una clase
 */
 ```
-
+@[2-7](Modificadores de accesso para clases)
+@[9-13](Modificadores de visibilidad)
 ---
 
 ### Genericidad
