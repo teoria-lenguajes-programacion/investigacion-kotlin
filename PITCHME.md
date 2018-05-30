@@ -251,7 +251,37 @@ when(x){
     print("none of the above")
   }
 }
+
+// Ciclos for: forma equivalente al for-each de Java
+for(item: Int in ints){
+  print(item)
+}
+
+// Se puede iterar sobre un rango de numeros
+for(i in 1..3){
+  println(i)
+}
+
+for(i in 6 downTo 0 step 2){
+  println(i)
+}
+
+/* Ciclos while: tanto el while como el do-while
+trabajan de la misma forma que en Java
+*/
 ```
+> Blockquotes are very handy in email to emulate reply text.
+> This line is part of the same quote.
+> Blockquotes are very handy in email to emulate reply text.
+> This line is part of the same quote.
+> Blockquotes are very handy in email to emulate reply text.
+> This line is part of the same quote.
+> Blockquotes are very handy in email to emulate reply text.
+> This line is part of the same quote.
+> Blockquotes are very handy in email to emulate reply text.
+> This line is part of the same quote.
+> Blockquotes are very handy in email to emulate reply text.
+> This line is part of the same quote.
 ---
 
 ### Secuenciadores
