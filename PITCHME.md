@@ -315,9 +315,9 @@ try{
   /* bloque finalizador opcional, de ser
   incluido, se ejecutará siempre. */
 }
-
-
 ```
+@[1-7](break y continue con etiquetas)
+@[8-21](Excepciones)
 ---
 
 ### Mecanismos de modularización
