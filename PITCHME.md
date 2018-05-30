@@ -361,13 +361,64 @@ fun main(args: Array<String>){
 En Kotlin se pueden utilizar todas las librerías `Futures`, `CompletableFutures`, _Reactive Extensions_ para concurrencia, paralelismo y programación asincrónica en general que son utilizadas en Java.
 
 ---
-###### Soporte a concurrencia, paralelismo, distribución
+###### Soporte a concurrencia, paralelismo, distribución (Cont.)
 
-**Corutinas**: A partir de la versión 1.1 de Kotlin se introdujo el concepto de Corutina que proporciona una forma de evitar bloquear un hilo y reemplazarlo con una operación más económica y de mayor control: la suspensión de una corutina.
+**Corutinas**: A partir de la versión 1.1 de Kotlin se introdujo el concepto de Corutina que proporciona una forma de evitar bloquear un hilo y reemplazarlo con una operación más económica y de mayor control: la suspensión de una corutina.  
 
+_Everything like in blocking code_
 
 ---
 
+###### Soporte a concurrencia, paralelismo, distribución (Cont.)
+```kotlin
+/* 
+Suspendiendo funciones: esto sucede cuando se 
+llama a una función marcada con la palabra
+reservada "suspend"
+*/
+suspend fun doSomething(foo: Foo) : Bar {
+  ...
+}
+
+// 1.
+suspend fun requestToken(): Token{
+  // makes request for a token & suspend
+  return token // returns result when received
+}
+
+// 2.
+suspend fun createPost(tokenL token, item: Item) : Post {
+  //sends item to server & suspend
+  return post // return result when received
+}
+
+fun processPost(post: Post){ ... }
+
+suspend fun postItem(item: Item){
+  val token = requestToken() // suspension point
+  val post  = createPost(token, item) // suspension point
+  processPost(post)
+}
+
+// Se puede utilizar en ciclos
+for((token, item) in list) {
+  createPost(token, item)
+}
+
+// Se puede manejar excepciones
+try {
+  createPost(token, item)
+} catch(e: BadTokenException){
+  ...
+}
+
+// Junto con funciones
+file.readLines().forEach { line ->
+  createPost(token, line.toItem())
+}
+```
+
+---
 
 ### Sistemas de Tipos
 

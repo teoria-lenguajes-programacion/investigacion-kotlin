@@ -418,7 +418,7 @@ Por otro lado, la suspensión de una corutina es casi gratis. No hay cambios de 
 
 Otra diferencia es que las corutinas no pueden ser suspendidas a partir de cualquier instrucción, sino solmanete con los llamados puntos de suspensión(\emph{suspension points}), que son llamados a funciones con anotadas de manera especial(\texttt{suspend}).
 
-\paragraph{Suspendiendo funciones} una suspensión pasa cuando se llamada a una función marcada con la palabra reservada \texttt{suspend}:
+\paragraph{Suspendiendo funciones} una suspensión pasa cuando se llama a una función marcada con la palabra reservada \texttt{suspend}:
 \begin{verbatim}
     suspend fun doSomething(foo: Foo): Bar {
         ...
