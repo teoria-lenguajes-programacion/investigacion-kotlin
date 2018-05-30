@@ -361,6 +361,10 @@ fun main(args: Array<String>){
 En Kotlin se pueden utilizar todas las librerías `Futures`, `CompletableFutures`, _Reactive Extensions_ para concurrencia, paralelismo y programación asincrónica en general que son utilizadas en Java.
 
 ---
+###### Soporte a concurrencia, paralelismo, distribución
+
+---
+
 
 ### Sistemas de Tipos
 
