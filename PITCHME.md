@@ -419,6 +419,9 @@ file.readLines().forEach { line ->
 }
 ```
 
+@[1-8](Suspendiendo funciones)
+@[10-28](Ejemplo)
+@[30-45](Usos)
 ---
 
 ### Sistemas de Tipos
