@@ -239,13 +239,13 @@ if (a > b){
 // If como expresión
 var max = a
 
-/* Expression when: reemplaza al operador switch de
+/* Expresion when: reemplaza al operador switch de
 lenguajes basados en C */
 when(x){
-  1 -> print("x == 1")
-  2 -> print("x == 2")
-  3,4 -> print("x == 3 or x == 4")
-  in 5..10 -> print("x is between 5 and 10")
+  1          -> print("x == 1")
+  2          -> print("x == 2")
+  3,4        -> print("x == 3 or x == 4")
+  in 5..10   -> print("x is between 5 and 10")
   !in 20..30 -> print("x is out of range")
   else -> {
     print("none of the above")
