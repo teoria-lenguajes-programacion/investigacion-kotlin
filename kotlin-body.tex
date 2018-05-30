@@ -442,10 +442,10 @@ Como se señaló en la sección \ref{sec:declaraciones}, nuevos tipos son introd
 
 \paragraph{Modificadores de acceso para clases:} \texttt{open}, \texttt{final} y \texttt{abstract}. 
 \begin{itemize}
-    \item \texttt{final}: \underline{No} puede ser sobre escrita. Utilizada por defecto para los miembros de clase
+    \item \texttt{final}: \underline{No} puede ser sobreescrita. Utilizada por defecto para los miembros de clase
     \item \texttt{open}: Puede ser sobreescrita. Tiene que se especificada explícitamente
-    \item \texttt{abstract}: \underline{Debe} ser sobre escrita. Puede ser utilizada solamente en clases abstractas, los miembros abstractos no pueden tener una implementación
-    \item \texttt{override}: sobre escribe un miembro de una super clase o interfaz. El miembro sobreescrito está abierto por defecto, sino está marcado como \texttt{final}. 
+    \item \texttt{abstract}: \underline{Debe} ser sobreescrita. Puede ser utilizada solamente en clases abstractas, los miembros abstractos no pueden tener una implementación
+    \item \texttt{override}: sobreescribe un miembro de una super clase o interfaz. El miembro sobreescrito está abierto por defecto, sino está marcado como \texttt{final}. 
 \end{itemize}
 
 \paragraph{Modificadores de visibilidad:} 
@@ -498,7 +498,7 @@ De manera similar a \texttt{C\#}, Kotlin proporciona la habilidad de extender un
 
 \paragraph{Extension functions} Para su declaración se necesita añadir el tipo que va a ser extendido como prefijo del nombre. El siguiente código añade la función \texttt{swap} a \emph{MutableList<Int>}:
 \begin{verbatim}
-    fun MuchableList<Int>.swap(index1: Int, index2: Int) {
+    fun MutableList<Int>.swap(index1: Int, index2: Int) {
         val tmp = this[index1] //'this' corresponde a la lista
         this[index1] = this[index2]
         this[index2] = tmp

@@ -425,7 +425,11 @@ file.readLines().forEach { line ->
 ---
 
 ### Sistemas de Tipos
-
+Modificadores de accesso para clases:
+- `final`: **No** puede ser sobreescrita (por defecto)
+- `open`: Puede ser sobreescrita
+- `abstract`: **Debe** ser sobreescrita
+- `override`: sobreescribe un miembro de una super clase o interfaz
 ---
 
 ### Genericidad
