@@ -317,7 +317,8 @@ try{
 }
 ```
 @[1-7](break y continue con etiquetas)
-@[8-21](Excepciones)
+@[8,9](Lanzar excepción)
+@[10-21](Captura de Excepciones)
 ---
 
 ### Mecanismos de modularización
