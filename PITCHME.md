@@ -440,9 +440,42 @@ Modificadores de visibilidad
 - protected: Visible en subclases
 - private: Visible en una clase
 */
+
+// Herencia: todas las clases heredan de Any
+open class Base(p: Int) {...}
+
+class Derived(p: Int): Base(p) {...}
+
+// Sobreescritura de métodos
+open class Base{
+  open fun v(){ ... }
+  fun nv(){ ... }
+}
+class Derived(): Base() {
+  override fun v(){ 
+    // sobreescritura
+  }
+}
+
+/* Extensiones: similar a C#, Kotlin proporciona 
+la habilidad de extender una clase con nueva 
+funcionalidad sin tener que heredar de la clase o 
+usar algún tipo de patrón de diseño como el 
+patrón decorador
+*/
+fun MutableList<Int>.swap(index1: Int, index2: Int) {
+    val tmp = this[index1] //"this" corresponde a la lista
+    this[index1] = this[index2]
+    this[index2] = tmp
+}
+val l = mutableListOf(1, 2, 3)
+l.swap(0,2) 
 ```
 @[2-7](Modificadores de accesso para clases)
 @[9-13](Modificadores de visibilidad)
+@[15-19](Herencia)
+@[21-30](Sobreescritura de métodos)
+@[31-44](Extensiones)
 ---
 
 ### Genericidad
