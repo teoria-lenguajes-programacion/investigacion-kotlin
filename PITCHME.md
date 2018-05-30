@@ -111,7 +111,7 @@ Se delega el manejo del almacenamiento a la JVM
 ```kotlin
 // Declaración de una clase
 class Invoice { 
-}
+} // Implícitamente hereda de Any
 // Clase con constructor primario
 class User(_nickname: String){
   val nickname = _nickname;
@@ -425,11 +425,23 @@ file.readLines().forEach { line ->
 ---
 
 ### Sistemas de Tipos
+```kotlin
+/* 
 Modificadores de accesso para clases:
-- `final`: **No** puede ser sobreescrita (por defecto)
-- `open`: Puede ser sobreescrita
-- `abstract`: **Debe** ser sobreescrita
-- `override`: sobreescribe un miembro de una super clase o interfaz
+- final: No puede ser sobreescrita(por defecto)
+- open: Puede ser sobreescrita
+- abstract: Debe ser sobreescrita
+- override: sobreescribe un miembro de una 
+super clase o interfaz
+
+Modificadores de visibilidad
+- public: (por defecto). Visible en todas partes
+- internal: Visible en un modulo
+- protected: Visible en subclases
+- private: Visible en una clase
+*/
+```
+
 ---
 
 ### Genericidad
