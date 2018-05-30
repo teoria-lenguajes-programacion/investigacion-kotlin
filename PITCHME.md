@@ -38,7 +38,7 @@ Se buscaba:
 
 ---
 
-#### Mi primer programa en Kotlin
+### Mi primer programa en Kotlin
 
 ```kotlin
 
@@ -278,13 +278,18 @@ do{
 } while (y != null) // "y" es visible aqui
 ```
 @[1-10](If-Else)
-@[12-25](When)
+@[12-24](When)
 @[25-37](Ciclo For)
-@[39-48](Ciclo For)
+@[39-48](Ciclo While, Do-While)
 
 ---
 
 ### Secuenciadores
+- `return`: retorna de la función más reciente
+- `break`: termina un ciclo
+- `continue`: continua con la siguiente iteración de un ciclo
+- Excepciones: todas descienden de `Throwable`. Tiene un mensaje, _stack trace_ y una causa (opcional)
+- Para lanzar una excepción se usa `throw`
 
 ---
 
