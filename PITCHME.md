@@ -321,8 +321,10 @@ try{
 @[10-21](Captura de Excepciones)
 ---
 
-#### Mecanismos de modularización
-Se logra por medio de paquetes. Cada archivo Kotlin puede tener una declaración de `package` al inicio y todas las demás declaraciones definidas en el archivo serán colocados bajo ese pequete.
+### Mecanismos de modularización
+Se logra por medio de paquetes. Cada archivo Kotlin puede tener una declaración de `package` al inicio y todas las demás declaraciones definidas en el archivo serán colocados bajo ese paquete.  
+
+Las declaraciones definidas en otros archivos puede ser usados directamente si están en el mismo paquete.
 
 ---
 
