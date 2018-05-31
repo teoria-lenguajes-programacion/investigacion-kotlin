@@ -479,6 +479,15 @@ l.swap(0,2)
 ---
 
 ### Genericidad
+Tal y como en Java, las clases en Kotlin pueden tener tipos parametrizados
+```kotlin
+class Box<T>(t: T){
+  var value = t
+}
+val box = Box<Int> = Box<Int>(1)
+val box: Box(1)
+// 1 es un Int, así que se puede inferir el tipo
+```
 
 ---
 ### Soporte a Paradigmas
