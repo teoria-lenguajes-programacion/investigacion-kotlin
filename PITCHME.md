@@ -479,8 +479,12 @@ l.swap(0,2)
 ---
 
 ### Genericidad
-Tal y como en Java, las clases en Kotlin pueden tener tipos parametrizados
 ```kotlin
+/*
+Tal y como en Java, las clases y métodos en 
+Kotlin pueden tener tipos parametrizados
+*/
+
 class Box<T>(t: T){
   var value = t
 }
