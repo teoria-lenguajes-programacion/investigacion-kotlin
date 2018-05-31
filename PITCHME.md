@@ -508,6 +508,7 @@ printArray(array)
 
 /*
 Funciones genericas
+fun <T> List<T>.slice(indices: IntRange): List<T>
 */
 val letters = ('a'..'z').toList()
 println(letters.slice<Char>(0..2))
