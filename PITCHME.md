@@ -548,6 +548,10 @@ $ kotlinc -script sample.kts // Ejecuta un script de Kotlin
 ```
 ---
 ### Soporte a "Programación en grande"
+- Backend: _Spring Framework_, Vert.x, Ktor
+- Android: Soporte oficial
+- Client-side: KotlinJS, traspilar código Kotlin a JavaScript
+- Kotlin/Native: compilar Kotlin a binarios nativos sin necesidad de una VM.
 
 ---
 ## Análisis y Conclusiones
