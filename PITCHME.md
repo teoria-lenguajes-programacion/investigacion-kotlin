@@ -481,7 +481,7 @@ l.swap(0,2)
 ### Genericidad
 ```kotlin
 /*
-Tal y como en Java, las clases y métodos en 
+Tal y como en Java, las clases y funciones en 
 Kotlin pueden tener tipos parametrizados
 */
 
@@ -505,6 +505,16 @@ fun printArray(array: Array<*>) {
 // Uso
 val array = arrayOf(1, 2, 3)
 printArray(array)
+
+/*
+Funciones genericas
+*/
+val letters = ('a'..'z').toList()
+println(letters.slice<Char>(0..2))
+// [a, b, b]
+println(letters.slice(10..13))
+// [k, l, m, n]
+
 ```
 
 ---
