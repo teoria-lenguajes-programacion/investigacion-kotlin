@@ -533,7 +533,8 @@ strings.filter { it.length == 5 }
        .sortedBy { it }
        .map { it.toUpperCase() }
 
-// Closures
+/* Closures: una expresion lambda o una funcion
+anonima puede acceder a su closure */
 var sum = 0
 ints.filter { it > 0 }.forEach {
     sum += it
