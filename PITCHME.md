@@ -522,7 +522,19 @@ println(letters.slice(10..13))
 
 ---
 ### Soporte a Paradigmas
+Los dos grandes paradigmas soportados son: programación orientada a objetos y programación funcional. Las funciones pueden ser almacenadas en variables, estructuras de datos, pasadas como argumentos y retornadas des otra función de orden superior.  
 
+Kotlin también puede ser utilizado como lenguaje de _scripting_. 
+
+---
+```kotlin
+
+```
+```bash
+# Scripting
+$ kotlinc // Inicia el REPL
+$ kotlinc -script sample.kts // Ejecuta el código Kotlin 
+```
 ---
 ### Soporte a "Programación en grande"
 
