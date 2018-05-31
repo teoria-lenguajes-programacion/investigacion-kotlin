@@ -506,7 +506,8 @@ val array = arrayOf(1, 2, 3)
 printArray(array)
 
 /*
-Funciones genericas
+Funciones genericas: Los tipos parametrizados se 
+colocan antes del nombre de la función
 fun <T> List<T>.slice(indices: IntRange): List<T>
 */
 val letters = ('a'..'z').toList()
@@ -517,7 +518,7 @@ println(letters.slice(10..13))
 ```
 @[1-10](Clases parametrizadas)
 @[12-24](Star projections)
-@[26-34](Funciones parametrizadas)
+@[26-35](Funciones parametrizadas)
 
 ---
 ### Soporte a Paradigmas
