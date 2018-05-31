@@ -484,7 +484,6 @@ l.swap(0,2)
 Tal y como en Java, las clases y funciones en 
 Kotlin pueden tener tipos parametrizados
 */
-
 class Box<T>(t: T){
   var value = t
 }
@@ -515,8 +514,10 @@ println(letters.slice<Char>(0..2))
 // [a, b, b]
 println(letters.slice(10..13))
 // [k, l, m, n]
-
 ```
+@[1-10](Clases parametrizadas)
+@[12-24](Star projections)
+@[26-34](Funciones parametrizadas)
 
 ---
 ### Soporte a Paradigmas
