@@ -554,8 +554,12 @@ $ kotlinc -script sample.kts // Ejecuta un script de Kotlin
 - Kotlin/Native: compilar Kotlin a binarios nativos sin necesidad de una VM.
 
 ---
-## Análisis y Conclusiones
+### Análisis y Conclusiones
 
 - La interoperatibilidad con Java y la versatibilidad de Kotlin lo convierte en una alternativa para muchos programadores
 - Agrupa muchas de las ideas de otros lenguajes populares
 - Se puede programar desde sistemas embebidos y hasta aplicaciones móviles
+
+---
+
+## ¡Muchas Gracias!
