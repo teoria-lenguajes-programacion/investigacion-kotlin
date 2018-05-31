@@ -528,12 +528,21 @@ Kotlin también puede ser utilizado como lenguaje de _scripting_.
 
 ---
 ```kotlin
+// Lambda
+strings.filter { it.length == 5 }.sortedBy { it }.map { it.toUpperCase() }
+
+// Closures
+var sum = 0
+ints.filter { it > 0 }.forEach {
+    sum += it
+}
+print(sum)
 
 ```
 ```bash
 # Scripting
 $ kotlinc // Inicia el REPL
-$ kotlinc -script sample.kts // Ejecuta el código Kotlin 
+$ kotlinc -script sample.kts // Ejecuta un script de Kotlin 
 ```
 ---
 ### Soporte a "Programación en grande"
