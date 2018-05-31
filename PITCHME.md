@@ -136,7 +136,7 @@ interface Clickable {
 class Button : Clickable {
   override fun click() = println("I was clicked")
 }
-val submitBtn = Clickable = Button()
+val submitBtn = Clickable : Button()
 submitBtn.click()
 
 // Interfaz con implementaciones
@@ -548,6 +548,7 @@ $ kotlinc -script sample.kts // Ejecuta un script de Kotlin
 ```
 ---
 ### Soporte a "Programación en grande"
+- Integración con Maven y Gradle
 - Backend: _Spring Framework_, Vert.x, Ktor
 - Android: Soporte oficial
 - Client-side: KotlinJS, traspilar código Kotlin a JavaScript
