@@ -487,6 +487,20 @@ class Box<T>(t: T){
 val box = Box<Int> = Box<Int>(1)
 val box: Box(1)
 // 1 es un Int, así que se puede inferir el tipo
+
+/* 
+Star projections: Existen situaciones en donde 
+no se tiene conocimiento del tipo específico del 
+tipo del valor. Supóngase que solamente se desea 
+imprimir todos los elementos de un arreglo y que 
+no importa el tipo de los elemento en ese arreglo. 
+*/
+fun printArray(array: Array<*>) {
+    array.forEach { println(it) }
+}
+// Uso
+val array = arrayOf(1, 2, 3)
+printArray(array)
 ```
 
 ---
