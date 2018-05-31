@@ -529,7 +529,9 @@ Kotlin también puede ser utilizado como lenguaje de _scripting_.
 ---
 ```kotlin
 // Lambda
-strings.filter { it.length == 5 }.sortedBy { it }.map { it.toUpperCase() }
+strings.filter { it.length == 5 }
+       .sortedBy { it }
+       .map { it.toUpperCase() }
 
 // Closures
 var sum = 0
@@ -537,7 +539,6 @@ ints.filter { it > 0 }.forEach {
     sum += it
 }
 print(sum)
-
 ```
 ```bash
 # Scripting
