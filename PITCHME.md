@@ -363,9 +363,9 @@ En Kotlin se pueden utilizar todas las librerías `Futures`, `CompletableFutures
 ---
 ###### Soporte a concurrencia, paralelismo, distribución (Cont.)
 
-**Corutinas**: A partir de la versión 1.1 de Kotlin se introdujo el concepto de Corutina que proporciona una forma de evitar bloquear un hilo y reemplazarlo con una operación más económica y de mayor control: la suspensión de una corutina.  
+**Corrutinas**: A partir de la versión 1.1 de Kotlin se introdujo el concepto de Corutina que proporciona una forma de evitar bloquear un hilo y reemplazarlo con una operación más económica y de mayor control: la suspensión de una corutina.  
 
-[KotlinConf 2017 - Corutinas](https://www.youtube.com/watch?v=_hfBv0a09Jc&t=1233s)
+[KotlinConf 2017 - Corrutinas](https://www.youtube.com/watch?v=_hfBv0a09Jc&t=1233s)
 
 ---
 
@@ -522,7 +522,7 @@ println(letters.slice(10..13))
 
 ---
 ### Soporte a Paradigmas
-Los dos grandes paradigmas soportados son: programación orientada a objetos y programación funcional. Las funciones pueden ser almacenadas en variables, estructuras de datos, pasadas como argumentos y retornadas des otra función de orden superior.  
+Los dos grandes paradigmas soportados son: programación orientada a objetos y programación funcional. Las funciones pueden ser almacenadas en variables, estructuras de datos, pasadas como argumentos y retornadas de otra función de orden superior.  
 
 Kotlin también puede ser utilizado como lenguaje de _scripting_. 
 
