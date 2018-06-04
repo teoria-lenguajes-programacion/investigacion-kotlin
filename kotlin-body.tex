@@ -382,7 +382,7 @@ Para atrapar una excepción, se usa la expresión \texttt{try}:
 \end{verbatim}
 Pueden haber uno o varios bloques \texttt{catch}. Los bloques \texttt{finally} pueden ser omitidos. 
 
-\subsection{Mecanismos de abstracción}
+%\subsection{Mecanismos de abstracción}
 %% Esta sección podria ser reemplazada por otras en donde se habla sobre clases, subclases, herencia, tipos abstractos, encapsulacimiento
 
 \subsection{Mecanismos de modularización}
@@ -409,14 +409,14 @@ En Kotlin, se pueden poner varias clases en el mismo archivo y se escoger cualqu
 \subsection{Soporte a concurrencia, paralelismo, distribución}
 Al ser 100\% interoperable con Java, en Kotlin se pueden utilizar todas las librerías (\emph{Futures}, \emph{CompletableFutures}, \emph{Reactive Extensions}) para concurrencia, paralelismo y programación asincrónica en general que son utilizadas en Java.
 
-\subsubsection{Corutinas (\emph{Coroutines})}
-A partir de la versión 1.1 de Kotlin se introdujo el concepto de Corutina que proporciona una forma de evitar bloquear un hilo(\emph{thread}) y reemplazarlo con una operación más económica y de mayor control: la \emph{suspensión} de una corutina.
+\subsubsection{Corrutinas (\emph{Coroutines})}
+A partir de la versión 1.1 de Kotlin se introdujo el concepto de Corrutina que proporciona una forma de evitar bloquear un hilo(\emph{thread}) y reemplazarlo con una operación más económica y de mayor control: la \emph{suspensión} de una corrutina.
 
-Básicamente, las corutinas son cómputos que pueden ser \emph{suspendidos} sin bloquear un hilo. El bloqueo de un hilo es usualmente una operación cara en términos de CPU y memoria, especialmente bajo grandes cargas de trabajo, porque solamente un número relativamente pequeño de hilos puede ser mantenido, por lo que bloquear uno de ellos lleva a que se retrase un trabajo importante.
+Básicamente, las corrutinas son cómputos que pueden ser \emph{suspendidos} sin bloquear un hilo. El bloqueo de un hilo es usualmente una operación cara en términos de CPU y memoria, especialmente bajo grandes cargas de trabajo, porque solamente un número relativamente pequeño de hilos puede ser mantenido, por lo que bloquear uno de ellos lleva a que se retrase un trabajo importante.
 
-Por otro lado, la suspensión de una corutina es casi gratis. No hay cambios de contexto o cualquier otro tipo de involucramiento del sistema operativo es requerido. Aparte de esto, la suspensión puede ser contralada por el código del usuario y de esta forma decidir qué pasa con la misma y de esta forma optimizar, interceptar o capturar una excepción de acuerdo al escenario dado.
+Por otro lado, la suspensión de una corrutina es casi gratis. No hay cambios de contexto o cualquier otro tipo de involucramiento del sistema operativo es requerido. Aparte de esto, la suspensión puede ser contralada por el código del usuario y de esta forma decidir qué pasa con la misma y de esta forma optimizar, interceptar o capturar una excepción de acuerdo al escenario dado.
 
-Otra diferencia es que las corutinas no pueden ser suspendidas a partir de cualquier instrucción, sino solmanete con los llamados puntos de suspensión(\emph{suspension points}), que son llamados a funciones con anotadas de manera especial(\texttt{suspend}).
+Otra diferencia es que las corrutinas no pueden ser suspendidas a partir de cualquier instrucción, sino solmanete con los llamados puntos de suspensión(\emph{suspension points}), que son llamados a funciones con anotadas de manera especial(\texttt{suspend}).
 
 \paragraph{Suspendiendo funciones} una suspensión pasa cuando se llama a una función marcada con la palabra reservada \texttt{suspend}:
 \begin{verbatim}
@@ -424,9 +424,9 @@ Otra diferencia es que las corutinas no pueden ser suspendidas a partir de cualq
         ...
     }
 \end{verbatim}
-Estas funciones son llamadas \emph{suspending functions} porque las llamadas a ellas pueden suspender una corutina. Las \emph{suspending functions} pueden tomar parámetros y retornar valores de la misma forma que las funciones normales, pero solamente pueden ser llamadas desde corutinas y otras \emph{suspending functions}.
+Estas funciones son llamadas \emph{suspending functions} porque las llamadas a ellas pueden suspender una corfutina. Las \emph{suspending functions} pueden tomar parámetros y retornar valores de la misma forma que las funciones normales, pero solamente pueden ser llamadas desde corfutinas y otras \emph{suspending functions}.
 
-De hecho para iniciar una corutina, debe de haber al menos una \emph{suspending function}, y es usualmente una función lambda. El siguiente es un ejemplo simplificado de la función \texttt{async}\footnote{De la librería kotlinx.coroutines}.
+De hecho para iniciar una cofrutina, debe de haber al menos una \emph{suspending function}, y es usualmente una función lambda. El siguiente es un ejemplo simplificado de la función \texttt{async}\footnote{De la librería kotlinx.coroutines}.
 \begin{verbatim}
     fun <T> async(block: suspend() -> T)
 \end{verbatim}
